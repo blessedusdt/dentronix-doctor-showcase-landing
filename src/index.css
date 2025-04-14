@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -95,7 +96,32 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-dentronix-blue to-dentronix-green bg-clip-text text-transparent;
+  }
+  
+  .service-card {
+    @apply bg-white rounded-xl p-6 shadow-lg transition-all hover:shadow-xl;
+  }
+  
+  .doctor-card {
+    @apply bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2;
+  }
+  
+  .doctor-card-info {
+    @apply p-4 text-center;
   }
 }
