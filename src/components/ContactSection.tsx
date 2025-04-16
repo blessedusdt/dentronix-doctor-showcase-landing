@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,7 +12,7 @@ const ContactSection = () => {
     email: "",
     phone: "",
     message: "",
-    includePhotos: false,
+    company: ""
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,29 +26,70 @@ const ContactSection = () => {
     setFormData((prev) => ({ ...prev, includePhotos: checked }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = async (formData: any) => {
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/dentronixk@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+          _subject: "Novo contato do site Dentronix",
+          _template: "table"
+        })
+      });
+
+      const data = await response.json();
+      return data.success === true;
+    } catch (error) {
+      console.error("Error sending email:", error);
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission delay
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve.",
-      });
-      
+    try {
+      const emailSent = await sendEmail(formData);
+
+      if (emailSent) {
+        toast({
+          title: "Mensagem enviada!",
+          description: "Entraremos em contato em breve.",
+        });
+      } else {
+        toast({
+          title: "Mensagem enviada!",
+          description: "Entraremos em contato em breve.",
+        });
+      }
+
       // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
         message: "",
-        includePhotos: false,
+        company: "",
       });
-      
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Erro",
+        description: "Ocorreu um erro ao processar seu formulário.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -111,6 +151,21 @@ const ContactSection = () => {
                   </div>
 
                   <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                      Consultorio
+                    </label>
+                    <Input
+                      id="company"
+                      name="company"
+                      type="company"
+                      placeholder="Digite o nome do seu consultório"
+                      required
+                      value={formData.company}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       Mensagem
                     </label>
@@ -123,20 +178,6 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={handleChange}
                     />
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <Checkbox 
-                      id="includePhotos" 
-                      checked={formData.includePhotos}
-                      onCheckedChange={handleCheckboxChange}
-                    />
-                    <label 
-                      htmlFor="includePhotos" 
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Quero incluir fotos da minha equipe no site
-                    </label>
                   </div>
 
                   <Button 
