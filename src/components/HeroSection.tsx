@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import back from './img/back.jpg'
 
 const HeroSection = () => {
   return (
@@ -41,7 +42,7 @@ const HeroSection = () => {
           </div>
           <div className="order-1 md:order-2 flex justify-center">
             <img 
-              src="/placeholder.svg" 
+              src={back}
               alt="Dentronix - Tecnologia para Clínicas Odontológicas"
               className="w-full max-w-md rounded-2xl shadow-lg"
             />

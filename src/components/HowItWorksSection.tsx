@@ -17,9 +17,9 @@ const HowItWorksSection = () => {
             <div className="h-20 w-20 rounded-full bg-dentronix-blue flex items-center justify-center text-white text-3xl font-bold mb-6 mx-auto">
               1
             </div>
-            <h3 className="text-xl font-bold text-center mb-3">Envie os dados e fotos</h3>
+            <h3 className="text-xl font-bold text-center mb-3">Identifique a solução que mais te atende e clique em "saiba mais"</h3>
             <p className="text-gray-600 text-center">
-              Envie-nos as fotos dos profissionais e seus dados (nome, especialidade, CRO).
+              Envie-nos os os dados que você deseja inserir no site.
             </p>
             <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 hidden md:block">
               <ArrowRight className="text-dentronix-blue w-8 h-8" />
@@ -52,7 +52,7 @@ const HowItWorksSection = () => {
 
         <div className="mt-12 text-center">
           <a 
-            href="https://wa.me/5511951338478?text=Olá,%20quero%20saber%20mais%20sobre%20como%20funciona%20a%20Landing%20Page%20com%20fotos%20dos%20doutores" 
+            href="https://wa.me/5511951338478?text=Olá,%20quero%20saber%20mais%20sobre%20como%20funciona%20a%20Landing%20Page%20" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-dentronix-whatsapp text-white px-6 py-3 rounded-md font-medium hover:bg-green-600 transition"

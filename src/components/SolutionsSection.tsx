@@ -1,5 +1,7 @@
-
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, CodeIcon } from "lucide-react";
+import ux from './img/ux.png'
+import opt from './img/optimization.png'
+import code from './img/coding.png'
 
 const SolutionsSection = () => {
   return (
@@ -17,7 +19,7 @@ const SolutionsSection = () => {
           <div className="service-card">
             <div className="h-48 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
               <img 
-                src="/placeholder.svg" 
+                src={ux}
                 alt="Landing Page Básica"
                 className="h-36 object-contain"
               />
@@ -55,7 +57,7 @@ const SolutionsSection = () => {
           <div className="service-card">
             <div className="h-48 bg-green-100 rounded-lg flex items-center justify-center mb-6">
               <img 
-                src="/placeholder.svg" 
+                src={opt}
                 alt="Sistema Completo"
                 className="h-36 object-contain"
               />
@@ -78,6 +80,14 @@ const SolutionsSection = () => {
                 <CheckCircle className="h-5 w-5 text-dentronix-green mr-2 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Prontuário digital com login do paciente</span>
               </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-dentronix-green mr-2 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">Banco de Dados</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-dentronix-green mr-2 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">Data Analytics de Pacientes</span>
+              </li>
             </ul>
             <a 
               href="https://wa.me/5511951338478?text=Olá,%20tenho%20interesse%20no%20Sistema%20Completo" 
@@ -93,7 +103,7 @@ const SolutionsSection = () => {
           <div className="service-card">
             <div className="h-48 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
               <img 
-                src="/placeholder.svg" 
+                src={code}
                 alt="Solução Personalizada"
                 className="h-36 object-contain"
               />
@@ -114,7 +124,15 @@ const SolutionsSection = () => {
               </li>
               <li className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-dentronix-green mr-2 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Funcionalidades específicas para sua clínica</span>
+                <span className="text-gray-700">Integrações entre sistemas via API</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-dentronix-green mr-2 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">Implementação utilizando scrum</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-dentronix-green mr-2 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">Fluxo de automação</span>
               </li>
             </ul>
             <a 

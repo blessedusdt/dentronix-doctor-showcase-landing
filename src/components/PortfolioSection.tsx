@@ -1,22 +1,25 @@
+import sorrisoPerfeito from './img/sorrisoperfeito.png'
+import marcosAmaral from './img/marcosamaral.png'
+import odontoLife from './img/odontolife.jpg'
 
 const portfolioProjects = [
   {
     id: 1,
     title: "Clínica Odontológica Sorriso Perfeito",
     description: "Landing page com galeria de doutores e agendamento online",
-    image: "/placeholder.svg"
+    image: sorrisoPerfeito  // Mudei de 'src' para 'image'
   },
   {
     id: 2,
     title: "Centro de Implantes Dr. Marcos",
     description: "Sistema completo com prontuário digital",
-    image: "/placeholder.svg"
+    image: marcosAmaral
   },
   {
     id: 3,
     title: "Clínica Odonto Life",
     description: "Solução personalizada com CRM integrado",
-    image: "/placeholder.svg"
+    image: odontoLife
   },
 ];
 
